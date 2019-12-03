@@ -1,10 +1,10 @@
-import random
-
 '''
 @describe:猜数游戏,提示大小
 @author:xmulsm
 @date:2019-12-3
 '''
+import random
+
 ran = random.randint(0, 100)  # 计算机生成一个0-100的随机数
 maxNum = 6  # 最大猜数次数
 count = 0  # 猜数计数

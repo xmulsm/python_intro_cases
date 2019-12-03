@@ -1,11 +1,11 @@
-import random
-
 '''
 @describe:猜数游戏
 4位数，位置与数字都正确为A，数字正确，位置不正确记为B
 @author:xmulsm
 @date:2019-12-3
 '''
+
+import random
 
 
 def generate4():
@@ -54,7 +54,7 @@ def judgeNum(cp_num, user_num):
 
 if __name__ == '__main__':
     res = generate4()  # 计算机生成一个4位不同的整数
-    print(res)
+    # print(res)
     count = 0  # 猜数次数
     while True:
         your_num = input("请输入一个4位不同整数：")
