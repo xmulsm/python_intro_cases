@@ -12,7 +12,7 @@ def generate4():
     '''
     生成数字互不相同的4位数
     千位数从1-9，其它位数从0-9
-    @params:result  4位数结果
+    @params:num_list  4位数结果，类型list
     '''
     num_list = []
     num_set = set()
