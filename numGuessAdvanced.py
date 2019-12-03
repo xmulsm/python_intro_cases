@@ -16,11 +16,11 @@ def generate4():
     '''
     num_list = []
     num_set = set()
-    kilobit = random.randint(1, 9)
+    kilobit = random.randint(1, 9)  # 千位数不能为0
     num_list.append(kilobit)
     num_set.add(kilobit)
     while True:
-        other = random.randint(0, 9)
+        other = random.randint(0, 9)  # 其它位数0-9
         num_set.add(other)
         if len(num_list) >= 4:
             break
