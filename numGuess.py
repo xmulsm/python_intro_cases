@@ -1,12 +1,13 @@
 import random
 
 '''
-猜数游戏
-提示大小
+@describe:猜数游戏,提示大小
+@author:xmulsm
+@date:2019-12-3
 '''
-ran = random.randint(0, 100)  #计算机生成一个0-100的随机数
-maxNum = 6  #最大猜数次数
-count = 0   #猜数计数
+ran = random.randint(0, 100)  # 计算机生成一个0-100的随机数
+maxNum = 6  # 最大猜数次数
+count = 0  # 猜数计数
 while True:
     if count >= maxNum:
         print('您的次数已经用完了，挑战失败！')

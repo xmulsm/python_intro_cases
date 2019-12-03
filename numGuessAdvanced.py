@@ -1,9 +1,12 @@
 import random
 
 '''
-猜数游戏
+@describe:猜数游戏
 4位数，位置与数字都正确为A，数字正确，位置不正确记为B
+@author:xmulsm
+@date:2019-12-3
 '''
+
 
 def generate4():
     '''
