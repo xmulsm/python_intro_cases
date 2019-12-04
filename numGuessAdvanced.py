@@ -8,21 +8,21 @@
 import random
 
 
-def generate4():
+def generateNum(bits=4):
     '''
-    生成数字互不相同的4位数
-    千位数从1-9，其它位数从0-9
+    生成数字互不相同的n位数，n由传入参数bits确定
+    首位数从1-9，其它位数从0-9
     @params:num_list  4位数结果，类型list
     '''
     num_list = []
     num_set = set()
-    kilobit = random.randint(1, 9)  # 千位数不能为0
-    num_list.append(kilobit)
-    num_set.add(kilobit)
+    firstbit = random.randint(1, 9)  # 首位数不能为0
+    num_list.append(firstbit)
+    num_set.add(firstbit)
     while True:
         other = random.randint(0, 9)  # 其它位数0-9
         num_set.add(other)
-        if len(num_list) >= 4:
+        if len(num_list) >= bits:
             break
         else:
             if len(num_set) == len(num_list):  # num_set与num_list长度一样，表示新生成的数与原来的重复
@@ -43,7 +43,7 @@ def judgeNum(cp_num, user_num):
     user_num = list(user_num)
     count_A = 0  # 位置、数字全部正确的个数
     count_B = 0  # 数字正确、位置不正确的个数
-    for i in range(4):
+    for i in range(len(cp_num)):
         if cp_num[i] == int(user_num[i]):
             count_A += 1
         else:
@@ -53,17 +53,18 @@ def judgeNum(cp_num, user_num):
 
 
 if __name__ == '__main__':
-    res = generate4()  # 计算机生成一个4位不同的整数
+    res = generateNum(bits=4)  # 计算机生成一个4位不同的整数
     # print(res)
+    num_len = len(res)  # 生成随机整数的位数
     count = 0  # 猜数次数
     while True:
-        your_num = input("请输入一个4位不同整数：")
-        if len(set(list(your_num))) != 4:
+        your_num = input("请输入一个{}位不同整数：".format(num_len))
+        if len(set(list(your_num))) != num_len:
             print('您输入的4位数字非法，请重新输入！')
             continue
         count += 1
         count_a, count_b = judgeNum(cp_num=res, user_num=your_num)
         print('你共猜了{}次，结果{}A{}B'.format(count, count_a, count_b))
-        if count_a == 4:
+        if count_a == num_len:
             print('恭喜您，全部猜对！您共猜了{}次'.format(count))
             break
