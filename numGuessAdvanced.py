@@ -1,6 +1,6 @@
 '''
 @describe:猜数游戏
-4位数，位置与数字都正确为A，数字正确，位置不正确记为B
+n位数，位置与数字都正确为A，数字正确，位置不正确记为B
 @author:xmulsm
 @date:2019-12-3
 '''
@@ -12,7 +12,7 @@ def generateNum(bits=4):
     '''
     生成数字互不相同的n位数，n由传入参数bits确定
     首位数从1-9，其它位数从0-9
-    @params:num_list  4位数结果，类型list
+    @params:num_list  n位数结果，类型list
     '''
     num_list = []
     num_set = set()
